@@ -1,55 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Round Rectangle Box with Title and Description</title>
-<style>
-  .container {
-    position: relative;
-    width: 400px; /* Adjust the width of the container as needed */
-    height: auto; /* Adjust the height as needed */
-    overflow: hidden;
-    border-radius: 20px; /* Adjust the border-radius for round rectangle */
-  }
+  <title>Positioning Example</title>
+  <style>
+    .relative-div {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
 
-  .image {
-    display: block;
-    width: 100%;
-    height: auto;
-    opacity: 0.8; /* Adjust the opacity for low transparency */
-  }
-
-  .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    padding: 20px;
-  }
-
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .description {
-    font-size: 16px;
-  }
-</style>
+    .absolute-div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      top: 50px;
+      left: 50px;
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
-  <img src="assets/img/qb-benscookies.jpg" alt="Image" class="image">
-  <div class="overlay">
-    <div class="title">Title Here</div>
-    <div class="description">Description Here</div>
-  </div>
-</div>
-
+  <div class="relative-div">Relative</div>
+  <div class="absolute-div">Absolute</div>
 </body>
 </html>

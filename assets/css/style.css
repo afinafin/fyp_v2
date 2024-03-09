@@ -1451,3 +1451,59 @@ section {
     padding: 3px 0;
   }
 }
+
+/*--------------------------------------------------------------
+# Specifc Event
+--------------------------------------------------------------*/
+
+#event .event-poster{
+  position: relative;
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 10px;
+  padding: 30px;
+  /* transition: 0.3s; */
+  /* object-fit: cover; */
+  /* background-color: #18d26e; */
+
+}
+
+#event img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 10px;
+}
+
+#event .event-info {
+  background-color: #fcebe3;
+  border-radius: 5px;
+  padding: 30px 20px 30px 20px;
+  /* transition: 0.3s; */
+  
+}
+
+#event .event-info p {
+  font-weight: 700;
+  color:#4e4039;
+  /* background-color: #18d26e; */
+}
+
+#event .go-event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; 
+  align-content: center;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  /* background-color: #18d26e; */
+
+}
+
+#event .go-event img {
+  height: 60px;
+  width: 80px;
+  /* background-color: #18d26e; */
+}
