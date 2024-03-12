@@ -1,29 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Positioning Example</title>
-  <style>
-    .relative-div {
-      width: 100px;
-      height: 100px;
-      background-color: blue;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-
-    .absolute-div {
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      position: relative;
-      top: 50px;
-      left: 50px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories with Icons</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="relative-div">Relative</div>
-  <div class="absolute-div">Absolute</div>
+
+  <div class="container mt-4">
+    <div class="row align-items-center">
+      <div class="col-sm-8">
+        <!-- Search Bar -->
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <!-- Category Options -->
+        <select class="form-select">
+          <option selected>Choose Category...</option>
+          <option value="1">Category 1</option>
+          <option value="2">Category 2</option>
+          <option value="3">Category 3</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-text"><i class="bi bi-search"></i></span>
+    <input type="text" class="form-control" placeholder="Search...">
+  </div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="bi bi-laptop h2 text-primary mb-3"></i>
+          <h5 class="card-title">Technology</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="bi bi-book h2 text-primary mb-3"></i>
+          <h5 class="card-title">Education</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="bi bi-food h2 text-primary mb-3"></i>
+          <h5 class="card-title">Food</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="bi bi-food h2 text-primary mb-3"></i>
+          <h5 class="card-title">fashion</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="bi bi-food h2 text-primary mb-3"></i>
+          <h5 class="card-title">EnE</h5>
+        </div>
+      </div>
+    </div>
+    <!-- Add more categories as needed -->
+  </div>
+</div>
+
+<!-- Bootstrap JS (Optional, for certain Bootstrap features like tooltips, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap Icons (Optional, for Bootstrap icons) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.js"></script>
+
 </body>
 </html>

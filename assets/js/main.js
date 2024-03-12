@@ -242,4 +242,61 @@
     });
   });
 
+  /**
+   * Display store result
+   */
+  // Sample store data (replace with your actual store data)
+const stores = [
+  { name: "Store 1" },
+  { name: "Store 2" },
+  { name: "Store 3" },
+  // Add more store objects as needed
+];
+
+// Function to display store cards
+function displayStoreCards(pageNumber, pageSize) {
+  const storeCardsContainer = document.getElementById('store-cards');
+  const startIndex = (pageNumber - 1) * pageSize;
+  const endIndex = Math.min(startIndex + pageSize, stores.length);
+
+  storeCardsContainer.innerHTML = ''; // Clear previous content
+  
+  for (let i = startIndex; i < endIndex; i++) {
+    const store = stores[i];
+    const storeCard = document.createElement('div');
+    storeCard.classList.add('col-lg-3', 'col-md-3', 'col-6', 'mb-4');
+    storeCard.innerHTML = `
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">${store.name}</h5>
+          <!-- Add more details as needed -->
+        </div>
+      </div>
+    `;
+    storeCardsContainer.appendChild(storeCard);
+  }
+}
+
+// Function to handle pagination
+function handlePagination() {
+  const pageSize = 4; // Number of store cards per page
+  const totalPages = Math.ceil(stores.length / pageSize);
+  const paginationContainer = document.getElementById('pagination');
+  
+  paginationContainer.innerHTML = ''; // Clear previous pagination
+  
+  for (let i = 1; i <= totalPages; i++) {
+    const paginationButton = document.createElement('button');
+    paginationButton.textContent = i;
+    paginationButton.addEventListener('click', function() {
+      displayStoreCards(i, pageSize);
+    });
+    paginationContainer.appendChild(paginationButton);
+  }
+}
+
+// Initial display
+displayStoreCards(1, 4); // Display first page of store cards
+handlePagination(); // Add pagination buttons
+
 })()

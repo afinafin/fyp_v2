@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Event Specific Page</title>
+  <title>Directory</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -25,14 +25,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Ninestars
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -74,39 +66,101 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Event Specific</h2>
+          <h2>Queensbay Mall Directory</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Event Specific</li>
+            <li><a href="Directory.html">Directory</a></li>
           </ol>
         </div>
 
       </div>
     </section><!-- End Breadcrumbs Section -->
 
-    <section class="specific-item" id="event">
-      <div class="container">
+    <section class="searchBar-category">
+      <div class="container mt-4 mb-4">
         <div class="row">
-          <div class="col-lg-7 info" id="event" data-aos="zoom-in">
-            <p class="event-title">Event Name</p><br><br>
-            <p class="event-date">Event Date</p><br><br>
-            <p class="event-venue">Event Venue</p><br><br>
-            <p class="event-desc">Event Description</p><br><br>
-            <br><br><br><br>
-            <div class="go-direction">
-              <a href>
-                <img src="assets/img/pin.png">
-                <p>Take me there</p>
-              </a>
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/fnb.png" class="img-fluid">
+              <p>Food & Beverages</p>
             </div>
-            
           </div>
-          <div class="col-lg-5  display-img" data-aos="zoom-in">
-            <img src="assets/img/qb-event2.png" alt="#event-title">
+          
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/fashion.png" class="img-fluid" alt="Fashion">
+              <p>Fashion & Acessories</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/houseware-furnishing.png" class="img-fluid" alt="Houseware and Furnishing">
+              <p>Houseware & Furnishing</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/amenity.png" class="img-fluid" alt="Amenity">
+              <p>Amenities</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/gadget-computer.png" class="img-fluid" alt="Gadget and Computer">
+              <p>Computers, Mobile & Digital</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/entertainment.png" class="img-fluid" alt="Entertainment">
+              <p>Entertainment & Leisure</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row align-items-center">
+          <div class="col-sm-8">
+            <!-- Search Bar -->
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+          </div>
+          <div class="col-sm-4">
+            <!-- Category Options -->
+            <select class="category-select">
+              <option selected>Choose Category...</option>
+              <option value="1">Category 1</option>
+              <option value="2">Category 2</option>
+              <option value="3">Category 3</option>
+              <!-- Add more options as needed -->
+            </select>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="store-section" style="background-color: #f0b685 ;">
+      <div class="container">
+        <div class="row" id="store-cards">
+          <div class="col-lg-3 col-md-3 col-3 card">
+            Store 1
+          </div>
+
+          <!-- Store cards will be dynamically added here -->
+        </div>
+        <div class="pagination" id="pagination">
+          <!-- Pagination buttons will be dynamically added here -->
+        </div>
+      </div>
+    </section>
+    
 
   </main><!-- End #main -->
 
