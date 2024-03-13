@@ -1,91 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Categories with Icons</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    $primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, primary,secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}
+/* demo */
+body {
+  font-family: 'Poppins', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color:#222222;
+}
+</style>
 </head>
 <body>
-
-  <div class="container mt-4">
-    <div class="row align-items-center">
-      <div class="col-sm-8">
-        <!-- Search Bar -->
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary" type="submit">Search</button>
-        </form>
-      </div>
-      <div class="col-sm-4">
-        <!-- Category Options -->
-        <select class="form-select">
-          <option selected>Choose Category...</option>
-          <option value="1">Category 1</option>
-          <option value="2">Category 2</option>
-          <option value="3">Category 3</option>
-          <!-- Add more options as needed -->
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <div class="input-group">
-    <span class="input-group-text"><i class="bi bi-search"></i></span>
-    <input type="text" class="form-control" placeholder="Search...">
-  </div>
-
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-md-3 mb-4">
-      <div class="card text-center">
-        <div class="card-body">
-          <i class="bi bi-laptop h2 text-primary mb-3"></i>
-          <h5 class="card-title">Technology</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 mb-4">
-      <div class="card text-center">
-        <div class="card-body">
-          <i class="bi bi-book h2 text-primary mb-3"></i>
-          <h5 class="card-title">Education</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 mb-4">
-      <div class="card text-center">
-        <div class="card-body">
-          <i class="bi bi-food h2 text-primary mb-3"></i>
-          <h5 class="card-title">Food</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 mb-4">
-      <div class="card text-center">
-        <div class="card-body">
-          <i class="bi bi-food h2 text-primary mb-3"></i>
-          <h5 class="card-title">fashion</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 mb-4">
-      <div class="card text-center">
-        <div class="card-body">
-          <i class="bi bi-food h2 text-primary mb-3"></i>
-          <h5 class="card-title">EnE</h5>
-        </div>
-      </div>
-    </div>
-    <!-- Add more categories as needed -->
-  </div>
+<div class="login-container">
+    <h2>Login</h2>
+    <form action="#" method="post">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="#">Register</a></p>
 </div>
-
-<!-- Bootstrap JS (Optional, for certain Bootstrap features like tooltips, etc.) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Bootstrap Icons (Optional, for Bootstrap icons) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.js"></script>
-
 </body>
 </html>
