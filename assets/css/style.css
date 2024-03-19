@@ -622,7 +622,7 @@ section {
   position: relative;
   overflow: hidden;
   margin: 0 0 40px 0;
-  background: #fff;
+  background: #eeb263;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
   border-radius: 15px;
@@ -1503,19 +1503,81 @@ section {
 # Profile Page
 --------------------------------------------------------------*/
 
+.membership {
+  margin:20px;
+}
+.membership .container {
+  /* margin-left:20px; */
+  padding: 20px;
+
+}
 .membership .profile-card {
   border-radius: 20px;
-  background-color: #efb757;
-  padding: 20px;
+  background-color: #eb5d1e;
+  padding: 30px;
+
+}
+
+.profile-card .details {
+  margin-bottom: 10px;
+  /* background-color: blue; */
+  
 }
 .member-qr {
-  max-width: 300px;
-  max-height: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* max-width: 200px; */
+  /* background-color: #ef57ab; */
+}
+.member-qr img {
+  width:  100%;
 }
 
-.member-qr img {
-  width: 50%;
+@media (max-width: 575px) {
+  .profile-card {
+    margin-bottom: 10px;
+  }
+  .member-qr {
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .member-qr img {
+    width:70%;
+  }
+  
+}
 
+.benefits .icon-box {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fdeee8;
+  max-width: 280px;
+  max-height: auto;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 40px;
+  text-align: center;
+
+}
+
+.icon-box img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.benefits button,
+.benefits button:active {
+  color: #eb5d1e;
+  border-color: #eb5d1e;
+}
+
+.benefits button:hover {
+  background: #ee7843;
+  border-color: #eb5d1e;
 }
 
 

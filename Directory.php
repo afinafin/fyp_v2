@@ -1,3 +1,21 @@
+<?php 
+
+include 'dbconn.php';
+
+$sql = 'SELECT category_id, category_name FROM public."Category"';
+$result = pg_exec($conn, $sql);
+
+// if ($result) {
+//     // Loop through the categories and generate options
+//     while ($row = pg_fetch_assoc($result)) {
+//         echo '<option value="' . $row['category_id'] . '">' . $row['category_name'] . '</option>';
+//     }
+// } else {
+//     echo '<option value="">Error fetching categories</option>';
+// }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +23,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>My Parking</title>
+  <title>Directory</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -25,14 +43,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Ninestars
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -58,10 +68,7 @@
           </li>
           <li><a class="nav-link scrollto" href="event-promotion.html">Events & Promotion</a></li>
           <li><a class="nav-link scrollto" href="about-us.html">About Us</a></li>
-          <li><a class="nav-link scrollto" href="my-parking.html">My Parking</a></li>
-          <li><a class="nav-link scrollto" href="my-reward.html">Reward</a></li>
-          <li><a class="nav-link scrollto" href="profile.html">Profile</a></li>
-          <li><a class="nav-link scrollto" href="login.html">Logout</a></li>
+          <li><a class="nav-link scrollto" href="login.html">Login</a></li>
           <li><a class="nav-link scrollto" href="#searchtoggle"><img src="assets/img/search.svg"></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -77,23 +84,109 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
+          <h2>Queensbay Mall Directory</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Inner Page</li>
+            <li><a href="Directory.php">Directory</a></li>
           </ol>
         </div>
 
       </div>
     </section><!-- End Breadcrumbs Section -->
 
-    <section class="inner-page">
-      <div class="container">
-        <p>
-          Example inner page template
-        </p>
+    <section class="searchBar-category">
+      <div class="container mt-4 mb-4">
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/fnb.png" class="img-fluid">
+              <p>Food & Beverages</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/fashion.png" class="img-fluid" alt="Fashion">
+              <p>Fashion & Acessories</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/houseware-furnishing.png" class="img-fluid" alt="Houseware and Furnishing">
+              <p>Houseware & Furnishing</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/amenity.png" class="img-fluid" alt="Amenity">
+              <p>Amenities</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/gadget-computer.png" class="img-fluid" alt="Gadget and Computer">
+              <p>Computers, Mobile & Digital</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-4 col-4" data-aos="zoom-in">
+            <div class="category-icon d-block">
+              <img src="assets/img/category/entertainment.png" class="img-fluid" alt="Entertainment">
+              <p>Entertainment & Leisure</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row align-items-center">
+          <div class="col-sm-8">
+            <!-- Search Bar -->
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+          </div>
+          <div class="col-sm-4">
+            <!-- Category Options -->
+            <select class="category-select">
+              <option selected>Choose Category...</option>
+              <!-- displaying categories from database -->
+              <?php 
+              if ($result) {
+                while ($row = pg_fetch_assoc($result)) {
+                    echo '<option value= "' . $row['category_id']. '">' . $row['category_name']. '</option>';
+                }
+              } else {
+                echo '<option value =""> Error fetching categories </option>';
+              }
+              ?>
+
+            </select>
+          </div>
+        </div>
       </div>
     </section>
+
+    <section class="store-section" style="background-color: #f0b685 ;">
+      <div class="container">
+        <div class="row" id="store-cards">
+          <div class="col-lg-3 col-md-3 col-3 card">
+            Store 1
+            <img id="dir-img" src="" alt="dir-image"></img>
+          </div>
+
+          <!-- Store cards will be dynamically added here -->
+        </div>
+        <div class="pagination" id="pagination">
+          <!-- Pagination buttons will be dynamically added here -->
+        </div>
+      </div>
+    </section>
+    
 
   </main><!-- End #main -->
 
@@ -147,17 +240,6 @@
             </ul>
           </div>
 
-          <!-- <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div> -->
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
             <p>Do connnect with us through our social media platform!</p>
@@ -197,10 +279,48 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
+  
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+  import { getStorage, ref, getDownloadURL} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-storage.js";
 
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyD5_FOttP_jbdoB1JlqRF7f-tfmI2Wvm6I",
+    authDomain: "me-fyp.firebaseapp.com",
+    projectId: "me-fyp",
+    storageBucket: "me-fyp.appspot.com",
+    messagingSenderId: "50852366936",
+    appId: "1:50852366936:web:6199041c9c062ebf84582d",
+    measurementId: "G-YJ49NT80MV"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const storage = getStorage(app);
+
+  const imageRef = ref(storage, 'images');
+  const store1 = ref(storage, 'ben-cookies-1.jpg');
+
+  getDownloadURL(store1).then((url) => {
+    // Set the image src attribute with the download URL
+    const img = document.getElementById('dir-img');
+    img.setAttribute('src', url);
+}).catch((error) => {
+    // Handle any errors
+    console.error('Error getting download URL:', error);
+});
+</script>
+
+</body>
 </html>
